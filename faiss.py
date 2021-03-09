@@ -1,4 +1,5 @@
 import faiss
+import numpy as np
 
 dimension = 3
 
