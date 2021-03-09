@@ -1,4 +1,4 @@
-import faiss
+import faiss, uuid
 import numpy as np
 
 dimension = 3
