@@ -13,6 +13,9 @@ index.add_with_ids(v_1, np.array([10]))
 index.add_with_ids(v_2, np.array([20]))
 index.add_with_ids(v_3, np.array([30]))
 
+# Alternative to hardcoded Ids:
+# faiss_index_id_random = uuid.uuid1().int>>64
+# index.add_with_ids(vector, np.array([faiss_index_id_random],dtype=np.int64))
 
 print("ntotal")
 print(index.ntotal)
