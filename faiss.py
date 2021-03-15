@@ -76,4 +76,25 @@ print(I)
 print()
 
 
+# To search in the index based on an averaged representation of two or more vectors (embeddings): 
+
+to_reconstruct_ids = [10,30] # In this example we want to get a representation based on vector_with_id 10 and 30.
+reconstructed_vectors = []
+
+# Reconstruct the vectors
+for vector_id in to_reconstruct_ids:
+    reconstructed_vectors.append(index.reconstruct(vector_id))
+
+average_input_vector = np.array([np.average(reconstructed_vectors, axis=0)])
+
+print("Searching with average input vector representation")
+D, I = index.search(average_input_vector, 3)
+print("Distances")
+print(D[0])
+print()
+print("Indexes")
+print(I[0])
+print()
+
+
 faiss.write_index(index, "./index")
